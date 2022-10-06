@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { getDefaultNormalizer } from '@testing-library/react';
+import React from 'react';
+ import Junkbox from './Junkbox'
 
-function App() {
+ function App() {
+  function getData(val) {
+    console.log(val.target.value)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+   <>
+    <Junkbox onBlur={getData} />
+    <input type="text" id="xxx" onBlur={getData} />
+    <button variant="primary" type="submit">
+    </button>
+   </> 
+  )
+} 
 
 export default App;
